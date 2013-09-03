@@ -1,6 +1,6 @@
 {
   "name": "node-everyconf",
-  "version": "0.0.1",
+  "version": "0.0.1-2",
   "description": "Simple yet powerful tool for configuring node.js applications using json, yaml and more.",
   "main": "everyconf.js",
   "repository": {
