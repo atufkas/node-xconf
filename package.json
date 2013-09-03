@@ -1,0 +1,24 @@
+{
+  "name": "node-everyconf",
+  "version": "0.0.0",
+  "description": "Simple yet powerful tool for configuring node.js applications using json, yaml and more.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/atufkas/node-everyconf.git"
+  },
+  "keywords": [
+    "configuration",
+    "config",
+    "json",
+    "yaml"
+  ],
+  "author": "Matthias Lienau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atufkas/node-everyconf/issues"
+  },
+  "dependencies": {
+    "underscore": "~1.5.1"
+  }
+}
