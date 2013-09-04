@@ -15,7 +15,6 @@ This project is at an early "draft" development stage now (though roughly workin
 
 ## Usage
 
-
 Every config file consists of _sections_ named as the environments that shall be available. When reading a config file
 the section name may be passed as parameter but - when omitted - xconf always defaults to `process.env.NODE_ENV` and tries
 to read configuration data from that section. Configuration defaults may be defined within the reserved section "default"
@@ -36,18 +35,21 @@ production:
   db: 'mongodb://user:password@superawesome.mongodbprovidermetacloud.com:27777/mydb'
   data
     tmpdir: '/media/node/data/tmp'
-```
+  foo: 23
+  bar
+    baz: [42,256,9.81]
 
+```
 
 Calling code:
 ```
 var config = require('xconf').load('./config.yaml'); // let process.env.NODE_ENV == 'development'
 console.log('config.logging.level'); // output: 5
-
-var config2 = require('xconf').load('./config.yaml','production');
+// or
+var config = require('xconf').load('./config.yaml','production');
 console.log('config.logging.level'); // output: 3
+console.log('config.bar'); // output: biz: [ 42, 256, 9.81 ] }
 ```
-
 
 ## License
 
