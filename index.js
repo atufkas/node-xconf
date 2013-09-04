@@ -1,1 +1,1 @@
-module.exports = require('./everyconf');
+module.exports = require('./lib/everyconf');
