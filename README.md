@@ -17,7 +17,7 @@ This project is at an early "draft" development stage now (though roughly workin
 
 
 Every config file consists of _sections_ named as the environments that shall be available. When reading a config file
-the section name may be passed as parameter but - when omitted -xconf always defaults to `process.env.NODE_ENV` and tries
+the section name may be passed as parameter but - when omitted - xconf always defaults to `process.env.NODE_ENV` and tries
 to read configuration data from that section. Configuration defaults may be defined within the reserved section "default"
 and are overwritten by values of corresponding keys of the desired section.
 
