@@ -3,19 +3,16 @@ var _ = require('underscore')
 
 var EveryConf = {
 
-  options: {},
-  _fullconfig: null,
-  _parsedConfig: null,
-
   load: function() {
 
+    // Parse args
     var arg
       , args = []
       , _i
       , _len
-      , _rawconfig
-      , file
-      , section;
+      , options = {
+          useDefaultSection: true
+      };
 
     for (_i = 0, _len = arguments.length; _i < _len; _i++) {
       arg = arguments[_i];
@@ -27,10 +24,17 @@ var EveryConf = {
           break;
 
         case 'object':
-          this.options = _.defaults(this.options,arg);
+          options = _.defaults(options,arg);
           break;
       }
     }
+
+    // Read configuration and filter/aggregate desired sections
+
+    var file
+      , section
+      , fullconfig = null
+      , defaults = {};
 
     // File is either found relatively to dir where calling script resided
     // or - in case of require() - relatively to this modules directory
@@ -43,7 +47,7 @@ var EveryConf = {
 
     if (ext == 'js' || ext == 'json' || ext == '') {
       // "native" formats supported by require()
-      _fullconfig = require(file);
+      fullconfig = require(file);
     } else {
 
       // other formats need file consumption first
@@ -52,16 +56,16 @@ var EveryConf = {
       switch (ext.toLowerCase()) {
 
         case 'json':
-          _fullconfig = JSON.parse(fconts);
+          fullconfig = JSON.parse(fconts);
           break;
 
         case 'yml':
         case 'yaml':
-          _fullconfig = require('yaml').eval(fconts);
+          fullconfig = require('yaml').eval(fconts);
           break;
 
         case 'ini':
-          _fullconfig = require('ini').parseString(fconts);
+          fullconfig = require('ini').parseString(fconts);
           break;
 
         default:
@@ -69,8 +73,12 @@ var EveryConf = {
       }
     }
 
-    return this._parsedConfig = _.defaults(_fullconfig[ section ],_fullconfig[ 'default' ]);
+    if (fullconfig[ 'default' ] !== undefined && options.useDefaultSection) {
+      defaults = fullconfig[ 'default' ];
+    }
+
+    return _.defaults(fullconfig[ section ],defaults);
   }
 };
 
-module.exports = exports = EveryConf;
+module.exports.load = exports.load = EveryConf.load;
