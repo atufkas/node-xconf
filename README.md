@@ -4,10 +4,10 @@
 
 A node configuration utility for consuming different formats:
 
-- native javascript objects
 - json
 - yaml
 - ini
+- native javascript objects
 
 ## Please note!
 
@@ -21,9 +21,7 @@ the section name may be passed as parameter but - when omitted - xconf always de
 to read configuration data from that section. Configuration defaults may be defined within the reserved section "default"
 and are overwritten by values of corresponding keys of the desired section.
 
-Guess the following config file.
-
-`./config.yaml`:
+./config.yaml:
 ```
 default:
   db: 'mongodb://localhost:27017/mydb'
@@ -41,9 +39,13 @@ production:
 ```
 
 
+Calling code:
 ```
-var xconf = require('xconf','production');
-console.log('xconf.logging.level'); // output: 3
+var config = require('xconf').load('./config.yaml'); // let process.env.NODE_ENV == 'development'
+console.log('config.logging.level'); // output: 5
+
+var config2 = require('xconf').load('./config.yaml','production');
+console.log('config.logging.level'); // output: 3
 ```
 
 
