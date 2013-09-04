@@ -1,11 +1,11 @@
 {
-  "name": "everyconf",
+  "name": "xconf",
   "version": "0.0.1-3",
-  "description": "Simple yet powerful tool for configuring node.js applications using json, yaml and more formats.",
-  "main": "everyconf.js",
+  "description": "Simple yet powerful tool for configuring node.js applications using js, json, yaml or ini file formats.",
+  "main": "lib/xconf.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/atufkas/node-everyconf.git"
+    "url": "git://github.com/atufkas/node-xconf.git"
   },
   "keywords": [
     "configuration",
@@ -20,7 +20,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atufkas/node-everyconf/issues"
+    "url": "https://github.com/atufkas/node-xconf/issues"
   },
   "dependencies": {
     "underscore": "~1.5.1",
