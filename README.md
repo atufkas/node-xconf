@@ -48,7 +48,7 @@ console.log('config.logging.level'); // output: 5
 // or
 var config = require('xconf').load('./config.yaml','production');
 console.log('config.logging.level'); // output: 3
-console.log('config.bar'); // output: biz: [ 42, 256, 9.81 ] }
+console.log('config.bar'); // output: baz: [ 42, 256, 9.81 ] }
 ```
 
 ## License
