@@ -25,7 +25,7 @@
   "dependencies": {
     "underscore": "~1.5.1",
     "yaml": "~0.2.3",
-    "ini": "~1.1.0"
+    "iniparser": "~1.0.5"
   },
   "engines": {
     "node": "*"
