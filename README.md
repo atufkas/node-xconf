@@ -6,7 +6,6 @@ A node configuration utility for consuming different formats:
 
 - json
 - yaml
-- ini
 - native javascript objects
 
 ## Please note!

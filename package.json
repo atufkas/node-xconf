@@ -1,7 +1,7 @@
 {
   "name": "xconf",
-  "version": "0.0.1-3",
-  "description": "Simple yet powerful tool for configuring node.js applications using js, json, yaml or ini file formats.",
+  "version": "0.0.1-4",
+  "description": "Simple yet powerful tool for configuring node.js applications using js, json or yaml file formats.",
   "main": "lib/xconf.js",
   "repository": {
     "type": "git",
@@ -11,8 +11,7 @@
     "configuration",
     "config",
     "json",
-    "yaml",
-    "ini"
+    "yaml"
   ],
   "author": {
     "name": "Matthias Lienau",
