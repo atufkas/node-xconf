@@ -23,8 +23,7 @@
   },
   "dependencies": {
     "underscore": "~1.5.1",
-    "yaml": "~0.2.3",
-    "iniparser": "~1.0.5"
+    "yaml": "~0.2.3"
   },
   "engines": {
     "node": "*"
