@@ -22,7 +22,7 @@
     "url": "https://github.com/atufkas/node-xconf/issues"
   },
   "dependencies": {
-    "underscore": "~1.5.1",
+    "underscore": "~1.8",
     "yaml": "~0.2.3"
   },
   "engines": {
