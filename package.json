@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "underscore": "~1.13.1",
-    "yaml": "~0.2.3"
+    "yaml": "~2.2.2"
   },
   "engines": {
     "node": "*"
